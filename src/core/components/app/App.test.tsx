@@ -1,16 +1,15 @@
-/* eslint-disable testing-library/prefer-screen-queries */
-import React from "react";
 import { render } from "@testing-library/react";
-import { Provider } from "react-redux";
 import App from "./App";
-import { store } from "../../store/store";
+import { CardContainer } from "../../../features/characters/components/card.container/card.container";
+jest.mock(
+  "../../../features/characters/components/card.container/card.container"
+);
+describe("Given the app component", () => {
+  describe("When it's rendered", () => {
+    test("Then it should contain CardContainer", () => {
+      render(<App />);
 
-test("renders learn react link", () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
-
-  expect(getByText(/learn/i)).toBeInTheDocument();
+      expect(CardContainer).toHaveBeenCalled();
+    });
+  });
 });
