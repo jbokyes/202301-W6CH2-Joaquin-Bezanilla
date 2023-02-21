@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { useChars } from "../../hooks/use.characters";
-import { MOCK_CHARS } from "../../mocks/character.mock";
 import { CharacterStructure } from "../../models/character";
 import { CharacterApiRepo } from "../../services/character.api.repo";
 
