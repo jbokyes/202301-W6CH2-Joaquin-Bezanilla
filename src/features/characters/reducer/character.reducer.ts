@@ -6,4 +6,7 @@ const initialState: CharacterStructure[] = [];
 
 export const characterReducer = createReducer(initialState, (builder) => {
   builder.addCase(ac.loadCreator, (_state, { payload }) => payload);
+  builder.addCase(ac.updateCreator, (state, { payload }) =>
+    state.map((item) => (item.name === payload.name ? payload : item))
+  );
 });
