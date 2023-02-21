@@ -1,14 +1,8 @@
-import {
-  Action,
-  AnyAction,
-  configureStore,
-  ThunkAction,
-} from "@reduxjs/toolkit";
+import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { characterReducer } from "../../features/characters/reducer/character.reducer";
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
     character: characterReducer,
   },
 });
@@ -21,6 +15,3 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
-function counterReducer(state: unknown, action: AnyAction): unknown {
-  throw new Error("Function not implemented.");
-}
